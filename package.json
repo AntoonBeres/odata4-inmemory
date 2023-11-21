@@ -1,5 +1,5 @@
 {
-  "name": "odata-v4-inmemory",
+  "name": "odata4-inmemory",
   "version": "0.1.9",
   "description": "Service OData requests from an inmemory data store",
   "main": "lib/index.js",
@@ -12,28 +12,20 @@
     "pretest": "npm run build",
     "test": "mocha"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jaystack/odata-v4-inmemory.git"
-  },
   "keywords": [
     "OData",
     "server",
     "V4",
     "parser"
   ],
-  "author": "JayStack",
+  "author": "JayStack, Antoon Beres",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jaystack/odata-v4-inmemory/issues"
-  },
-  "homepage": "https://github.com/jaystack/odata-v4-inmemory#readme",
   "dependencies": {
-    "odata-v4-parser": "^0.1.9"
+    "odata-v4-parser": "0.1.29"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5",
-    "typescript": "^1.8.9"
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6"
   }
 }

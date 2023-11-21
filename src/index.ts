@@ -1,13 +1,13 @@
-import { FilterVisitor } from './FilterVisitor'
-import { filter as parseFilter } from 'odata-v4-parser'
-import { Token } from 'odata-v4-parser/lib/lexer'
+import { FilterVisitor } from './FilterVisitor';
+import { filter as parseFilter } from 'odata-v4-parser';
+import { Token } from 'odata-v4-parser/lib/lexer';
 
 export interface ExpressionFunction {
-  (entity: any): any
+  (entity: any): any;
 }
 
 export interface FilterFunction {
-  (entity: any): boolean
+  (entity: any): boolean;
 }
 
 const filterVisitor = new FilterVisitor();
@@ -22,10 +22,10 @@ const filterVisitor = new FilterVisitor();
  * console.log(items.filter(filterFn))
  * >> [{Size:4, Name:'Childrens book'}]
  */
-export function createFilter(filter:string);
-export function createFilter(filter:Token);
+export function createFilter(filter: string);
+export function createFilter(filter: Token);
 export function createFilter(filter: string | Token): FilterFunction {
-  let ast:Token = <Token>(typeof filter == "string" ? parseFilter(<string>filter) : filter);
+  const ast: Token = <Token>(typeof filter == 'string' ? parseFilter(<string>filter) : filter);
   return filterVisitor.Visit(ast, {});
 }
 
@@ -39,9 +39,9 @@ export function createFilter(filter: string | Token): FilterFunction {
  * console.log(expression(item))
  * >> 39Chai
  */
-export function compileExpression(expression:string);
-export function compileExpression(expression:Token);
+export function compileExpression(expression: string);
+export function compileExpression(expression: Token);
 export function compileExpression(expression: string | Token): ExpressionFunction {
-  let ast:Token = <Token>(typeof expression == "string" ? parseFilter(<string>expression) : expression);
-  return filterVisitor.Visit(ast, {})
+  const ast: Token = <Token>(typeof expression == 'string' ? parseFilter(<string>expression) : expression);
+  return filterVisitor.Visit(ast, {});
 }

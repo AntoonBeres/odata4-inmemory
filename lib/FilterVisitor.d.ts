@@ -35,8 +35,8 @@ export declare const ODataMethodMap: {
 export declare class FilterVisitor implements VisitorMap {
     [k: string]: VisitorFunc;
     Visit(node: Token, context: any): any;
-    private VisitFirstMemberExpression(node, context);
-    private VisitBinaryExpression(node, context);
+    private VisitFirstMemberExpression;
+    private VisitBinaryExpression;
     protected VisitBoolParenExpression(node: Token, context: any): (a: any) => boolean;
     protected VisitLambdaVariableExpression(node: Token, context: any): (a: any) => any;
     protected VisitCountExpression(node: Token, context: any): (a: any) => any;
@@ -67,7 +67,7 @@ export declare class FilterVisitor implements VisitorMap {
     protected VisitQualifiedEntityTypeName(node: Token, context: any): (a: any) => any;
     protected VisitEntityTypeName(node: Token, context: any): (a: any) => any;
     protected VisitOrExpression(node: Token, context: any): (a: any) => any;
-    private resolveIdentifier(node);
+    private resolveIdentifier;
     protected VisitIdentifier(node: any, context: any): (a: any) => any;
     protected VisitArray(node: Token, context: any): (a: any) => any[];
     protected VisitNegateExpression(node: Token, context: any): (a: any) => number;
